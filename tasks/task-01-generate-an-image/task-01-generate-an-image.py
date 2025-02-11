@@ -17,6 +17,7 @@ def generate_image(seed, width, height, mean, std):
         image (numpy.ndarray): The generated image.
     """
     ### START CODE HERE ###
+    ### cli: python3 task-01-generate-an-image.py --registration_number 12345 --width 256 --height 256 --mean 128 --std 20 --output img_output.png
     np.random.seed(seed)
     image = np.random.normal(mean, std, (height, width))  # random para valores aleatórios e alocação
     image = np.clip(image, 0, 255) # garante que os valores fiquem entre 0 e 255
