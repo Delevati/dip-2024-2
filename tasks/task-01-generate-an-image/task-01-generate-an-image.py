@@ -17,7 +17,10 @@ def generate_image(seed, width, height, mean, std):
         image (numpy.ndarray): The generated image.
     """
     ### START CODE HERE ###
-    ### TODO
+    np.random.seed(seed)
+    image = np.random.normal(mean, std, (height, width))  # random para valores aleatórios e alocação
+    image = np.clip(image, 0, 255) # garante que os valores fiquem entre 0 e 255
+    image = image.astype(np.uint8) # Converte para uint8, para o opencv
     ### END CODE HERE ###
 
     return image
