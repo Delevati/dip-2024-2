@@ -20,7 +20,10 @@ def linear_combination(i1: np.ndarray, i2: np.ndarray, a1: float, a2: float) -> 
         raise ValueError("Input images must have the same dimensions.")
 
     ### START CODE HERE ###
-    ### TODO
+    # Assign args to variable and gamma argument 
+    i_out = cv2.addWeighted(i1, a1, i2, a2, 0)
+    print(i_out.shape)
+    print(i_out)
     ### END CODE HERE ###
 
     return None
@@ -28,8 +31,10 @@ def linear_combination(i1: np.ndarray, i2: np.ndarray, a1: float, a2: float) -> 
 # Example Usage
 if __name__ == "__main__":
     # Load images
-    i1 = cv2.imread('image1.jpg', cv2.IMREAD_COLOR)
-    i2 = cv2.imread('image2.jpg', cv2.IMREAD_COLOR)
+    i1 = cv2.imread('image1.png', cv2.IMREAD_COLOR)
+    i2 = cv2.imread('image2.png', cv2.IMREAD_COLOR)
+    # i1 = cv2.imread('img/baboon.png', cv2.IMREAD_COLOR)
+    # i2 = cv2.imread('img/lena.png', cv2.IMREAD_COLOR)
 
     if i1 is None or i2 is None:
         raise FileNotFoundError("One or both images could not be loaded. Check file paths.")
