@@ -37,7 +37,7 @@ def match_histograms_rgb(source_img: np.ndarray, reference_img: np.ndarray) -> n
         src_channel = source_img[:, :, c]
         ref_channel = reference_img[:, :, c]
         
-        # Calcula os histogramas
+        # Calcula os histogramas (256 é exclusivo, discretização fica de 0 a 255)
         src_hist, _ = np.histogram(src_channel.flatten(), 256, [0, 256], density=True)
         ref_hist, _ = np.histogram(ref_channel.flatten(), 256, [0, 256], density=True)
         
