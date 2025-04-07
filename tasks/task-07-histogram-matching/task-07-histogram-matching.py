@@ -24,10 +24,9 @@ Notes:
 - You can assume the input images are already loaded and in RGB format (not BGR).
 """
 
-import cv2
+import cv2 # Somente para carregar as imagens
 import numpy as np
-from skimage import exposure
-import matplotlib.pyplot as plt
+from skimage import exposure # Preferi fazer manualmente, mas poderia ter utilizado para fazer os histograms
 
 def match_histograms_rgb(source_img: np.ndarray, reference_img: np.ndarray) -> np.ndarray:
     
